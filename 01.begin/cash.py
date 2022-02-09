@@ -15,7 +15,7 @@ class TestStrategy(bt.Strategy):
     """
 
     def log(self, txt, dt=None, doprint=False):
-        ''' 日志函数，用于统一输出日志格式 '''
+        """ 日志函数，用于统一输出日志格式 """
         if doprint:
             dt = dt or self.datas[0].datetime.date(0)
             print('%s, %s' % (dt.isoformat(), txt))
