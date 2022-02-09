@@ -1,12 +1,12 @@
 # Python实用宝典
 # 2020/05/16
 # 转载请注明出处
+import backtrader as bt
 import datetime
+import matplotlib.pyplot as plt
+import numpy as np
 import os.path
 import sys
-import numpy as np
-import backtrader as bt
-import matplotlib.pyplot as plt
 from backtrader.indicators import EMA
 
 
@@ -55,7 +55,7 @@ class TestStrategy(bt.Strategy):
                     "SELL EXECUTED, Price: %.2f, Cost: %.2f, Comm %.2f"
                     % (order.executed.price, order.executed.value, order.executed.comm)
                 )
-                temp = float(order.executed.price - self.buyprice)/float(self.buyprice)
+                temp = float(order.executed.price - self.buyprice) / float(self.buyprice)
                 self.params.profits.append(temp)
 
             self.bar_executed = len(self)
@@ -80,13 +80,13 @@ class TestStrategy(bt.Strategy):
             # condition1 = self.sma20[0] > self.dataclose[0]
             if self.dataclose[-1] < self.dataopen[-1]:
                 harami = (
-                    self.datahigh[0] < self.dataopen[-1]
-                    and self.datalow[0] > self.dataclose[-1]
+                        self.datahigh[0] < self.dataopen[-1]
+                        and self.datalow[0] > self.dataclose[-1]
                 )
             else:
                 harami = (
-                    self.datahigh[0] < self.dataclose[-1]
-                    and self.datalow[0] > self.dataopen[-1]
+                        self.datahigh[0] < self.dataclose[-1]
+                        and self.datalow[0] > self.dataopen[-1]
                 )
 
             if harami:

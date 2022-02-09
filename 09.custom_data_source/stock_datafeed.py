@@ -1,9 +1,8 @@
 import datetime
-import traceback
 import pymysql
-
-from backtrader.feed import DataBase
+import traceback
 from backtrader import date2num
+from backtrader.feed import DataBase
 
 
 class MySQLData(DataBase):

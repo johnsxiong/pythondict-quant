@@ -1,11 +1,12 @@
 # Python实用宝典
 # 转载请注明出处
+import backtrader as bt
 import datetime
 import os.path
 import sys
-import backtrader as bt
-from stock_datafeed import MySQLData
 from backtrader.indicators import EMA
+
+from stock_datafeed import MySQLData
 
 
 class TestStrategy(bt.Strategy):

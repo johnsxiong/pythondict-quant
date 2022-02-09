@@ -1,10 +1,10 @@
 # Python实用宝典
 # 2020/05/05
 # 转载请注明出处
+import backtrader as bt
 import datetime
 import os.path
 import sys
-import backtrader as bt
 from backtrader.indicators import EMA
 
 

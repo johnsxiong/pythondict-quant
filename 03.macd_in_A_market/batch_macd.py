@@ -1,11 +1,11 @@
 # Python实用宝典
 # 2020/04/25
 # 转载请注明出处
+import backtrader as bt
 import datetime
 import os.path
-import sys
 import pickle
-import backtrader as bt
+import sys
 from backtrader.indicators import EMA
 
 
@@ -87,13 +87,14 @@ class TestStrategy(bt.Strategy):
                 self.log('SELL CREATE, %.2f' % self.dataclose[0])
                 self.order = self.sell()
 
+
 def run_cerebro(stock_file, result):
     """
     运行策略
     :param stock_file: 股票数据文件位置
     :param result: 回测结果存储变量
     """
-    
+
     cerebro = bt.Cerebro()
 
     cerebro.addstrategy(TestStrategy)
@@ -146,7 +147,6 @@ for stock in os.listdir(files_path):
         run_cerebro(datapath, result)
     except Exception as e:
         print(e)
-
 
 f = open('./batch_macd_result.txt', 'wb')
 pickle.dump(result, f)

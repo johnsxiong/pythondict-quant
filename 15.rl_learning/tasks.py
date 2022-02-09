@@ -1,11 +1,12 @@
 import os
-import pickle
 import pandas as pd
+import pickle
+from celery import Celery
+from stable_baselines import PPO2
 from stable_baselines.common.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv
-from stable_baselines import PPO2
+
 from rlenv.StockTradingEnv0 import StockTradingEnv
-from celery import Celery
 
 BROKER_URL = f'redis://127.0.0.1:6379/0'
 BACKEND_URL = f'redis://127.0.0.1:6379/0'

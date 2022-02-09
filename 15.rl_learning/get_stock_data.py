@@ -1,7 +1,6 @@
 import baostock as bs
-import pandas as pd
 import os
-
+import pandas as pd
 
 OUTPUT = './stockdata'
 

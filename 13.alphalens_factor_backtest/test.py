@@ -1,7 +1,7 @@
 import pandas as pd
 import tushare as ts
-from alphalens.utils import get_clean_factor_and_forward_returns
 from alphalens.tears import create_full_tear_sheet
+from alphalens.utils import get_clean_factor_and_forward_returns
 
 pro = ts.pro_api()
 df = pro.daily(ts_code='000001.SZ,600982.SH', start_date='20200101', end_date='20211122')

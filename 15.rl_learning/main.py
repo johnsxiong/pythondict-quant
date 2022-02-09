@@ -1,15 +1,16 @@
+import matplotlib.font_manager as fm
+import matplotlib.pyplot as plt
+import numpy as np
 import os
-import pickle
 import pandas as pd
+import pickle
 import random
+from stable_baselines import PPO2
 from stable_baselines.common.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv
-from stable_baselines import PPO2
+
 from rlenv.StockTradingEnv0 import StockTradingEnv
 from tasks import multi_stock_trade
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
 
 font = fm.FontProperties(fname='font/wqy-microhei.ttc')
 # plt.rc('font', family='Source Han Sans CN')
@@ -115,6 +116,7 @@ if __name__ == '__main__':
         # multi_stock_trade(code)
 
     import pickle
+
     files = os.listdir("result")
     results = []
     for f_name in files:

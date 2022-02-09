@@ -1,11 +1,11 @@
 # Python实用宝典
 # 2020/05/26
 # 转载请注明出处
+import backtrader as bt
 import datetime
+import numpy as np
 import os.path
 import sys
-import numpy as np
-import backtrader as bt
 from backtrader.indicators import EMA
 
 
@@ -14,6 +14,7 @@ class TestStrategy(bt.Strategy):
         ('code', 0),
         ('profits', [])
     )
+
     def log(self, txt, dt=None):
         """ Logging function fot this strategy"""
         dt = dt or self.datas[0].datetime.date(0)
@@ -50,7 +51,7 @@ class TestStrategy(bt.Strategy):
                     "BUY EXECUTED, Price: %.2f, Cost: %.2f, Comm %.2f"
                     % (order.executed.price, order.executed.value, order.executed.comm)
                 )
-                
+
                 # 记录买入价格
                 self.buyprice = order.executed.price
                 self.buycomm = order.executed.comm
@@ -61,7 +62,7 @@ class TestStrategy(bt.Strategy):
                     % (order.executed.price, order.executed.value, order.executed.comm)
                 )
                 # 收益率计算
-                profit_rate = float(order.executed.price - self.buyprice)/float(self.buyprice)
+                profit_rate = float(order.executed.price - self.buyprice) / float(self.buyprice)
                 # 存入策略变量
                 self.params.profits.append(profit_rate)
 

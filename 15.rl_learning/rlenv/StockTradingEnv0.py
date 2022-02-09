@@ -1,9 +1,9 @@
-import random
-import json
 import gym
-from gym import spaces
-import pandas as pd
+import json
 import numpy as np
+import pandas as pd
+import random
+from gym import spaces
 
 MAX_ACCOUNT_BALANCE = 2147483647
 MAX_NUM_SHARES = 2147483647
@@ -76,7 +76,7 @@ class StockTradingEnv(gym.Env):
 
             self.balance -= additional_cost
             self.cost_basis = (
-                prev_cost + additional_cost) / (self.shares_held + shares_bought)
+                                      prev_cost + additional_cost) / (self.shares_held + shares_bought)
             self.shares_held += shares_bought
 
         elif action_type < 2:
@@ -143,7 +143,7 @@ class StockTradingEnv(gym.Env):
     def render(self, mode='human', close=False):
         # Render the environment to the screen
         profit = self.net_worth - INITIAL_ACCOUNT_BALANCE
-        print('-'*30)
+        print('-' * 30)
         print(f'Step: {self.current_step}')
         print(f'Balance: {self.balance}')
         print(f'Shares held: {self.shares_held} (Total sold: {self.total_shares_sold})')

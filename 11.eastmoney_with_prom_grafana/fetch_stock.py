@@ -1,10 +1,9 @@
 # Python实用宝典
 # 2021-06-13
 # 文件名: fetch_stock.py
-import time
 import requests
+import time
 from prometheus_client import start_http_server, CollectorRegistry, Gauge
-
 
 reg = CollectorRegistry()
 gauge = Gauge(

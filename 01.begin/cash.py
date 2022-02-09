@@ -4,9 +4,9 @@
 # 2020/04/12
 
 import backtrader as bt
+import datetime
 import os
 import sys
-import datetime
 
 
 class TestStrategy(bt.Strategy):
@@ -100,7 +100,6 @@ class TestStrategy(bt.Strategy):
 
 
 if __name__ == '__main__':
-
     # 初始化模型
     cerebro = bt.Cerebro()
 
